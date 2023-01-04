@@ -1,0 +1,7 @@
+# Train/val/test sets as 1) dir: path/to/imgs, 2) file: path/to/imgs.txt, or 3) list: [path/to/imgs1, path/to/imgs2, ..]
+train: ../datasets/vest_dataset/images/train
+val: ../datasets/vest_dataset/images/val
+
+# Classes
+nc: 1  # number of classes
+names: ['vps']  # class names
