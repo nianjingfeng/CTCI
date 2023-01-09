@@ -29,8 +29,7 @@ q = queue.LifoQueue()
 #store the image after yolo processing
 q_yolo = queue.LifoQueue()
 #link to nas
-nas_fs = filestation.FileStation('192.168.0.136', '5000',  "simslab", "Ntust11001013!", secure=False, cert_verify=False, dsm_version=7, debug=True, otp_code=None)
-nas_path = "/surveillance/Generic_ONVIF-001/test/"
+nas_fs = filestation.FileStation('NAS_URL', 'PORT',  "USER_NAME", "PASSPORT", secure=False, cert_verify=False, dsm_version=7, debug=True, otp_code=None) #need modify
 os.environ['MKL_THREADING_LAYER'] = 'GNU'
 '''========================================================'''
 ''' GLOBAL VARIABLES '''
@@ -169,7 +168,7 @@ C_S = C_Status() # Set up a new status
 '''========================================================'''
 #collect the image
 def Receive():
-    URL = "rtsp://syno:91c7179d596a37c0260aa3abad7ef55e@192.168.0.136:554/Sms=7.unicast"
+    URL = "IP cam url" #need modify
     ipcam = cv2.VideoCapture(URL)
     success, frame = ipcam.read()
     q.put(frame)
@@ -179,7 +178,7 @@ def Receive():
 
 #show the image after processing
 def Display():
-    out = cv2.VideoWriter('/home/will/Desktop/CTCI/CTCI-main/1220.mp4', cv2.VideoWriter_fourcc(*'DIVX'), 10, (1920, 1080))
+    out = cv2.VideoWriter('inference.mp4', cv2.VideoWriter_fourcc(*'DIVX'), 10, (1920, 1080))
     while True:
         if q_yolo.empty() != True:
             frame_yolo = q_yolo.get()
