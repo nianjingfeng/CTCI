@@ -1,6 +1,4 @@
 # CTCI
-## Contents
-[TOC]
 ## Guide
 
 This project aims to detect the unqualified personnel in the dangerous zone of the construction site. This model applies object detecion technology YOLOv5 to detect the traffic cone, human and safety equipment. 
