@@ -24,4 +24,4 @@ There are 4 models to inference:
 
 Inference
 ---
-[Inference Video](https://drive.google.com/file/d/1tl-t3xN8XDajyEb5_lnlssTZN5M1SrUd/view?usp=share_link)
+![Infernce Video](https://i.imgur.com/pKfc4vh.gif)
